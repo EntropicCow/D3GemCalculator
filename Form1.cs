@@ -44,5 +44,16 @@ namespace D3GemCalculator
         {
             MessageBox.Show("Programmed by Jose A. Araujo 2014 \nThanks to Dale and William for inspiration.", "Diablo 3 Gem Calculator");
         }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                button1_Click(sender, e);
+                e.Handled = true;
+            }
+
+        }
     }
 }
