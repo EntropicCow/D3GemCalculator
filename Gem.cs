@@ -17,9 +17,9 @@ namespace D3GemCalculator
 
         public Gem()
         { // this used to be 3 txt files read from assembly and stored in a multi-dimensional array, but this is more efficient
-            GemChart = new int[18] { 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
-            GoldChart = new int[18] { 10, 25, 40, 55, 70, 85, 100, 5000, 10000, 20000, 30000, 50000, 75000, 100000, 200000, 300000, 400000, 500000 };
-            DeathsBreathChart = new int[18] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1 };
+            GemChart = new int[9] { 2, 2, 2, 3, 3, 3, 3, 3, 3 };
+            GoldChart = new int[9] { 2500, 5000, 10000, 20000, 25000, 200000, 300000, 400000, 500000 };
+            DeathsBreathChart = new int[9] { 0, 0, 0, 0, 0, 0, 0, 1, 1 };
         }
 
         private string CalculateGold(int typeused, int typewanted, int amountwanted)
@@ -64,7 +64,7 @@ namespace D3GemCalculator
                 return ""; //no need to render text for death's breath output if none are needed
 
         }
-        private string CalculateTime(int typeused, int typewanted, int amountwanted)
+        /*private string CalculateTime(int typeused, int typewanted, int amountwanted)
         { // fancy time calculations
             long seconds = 0;
             long minutes = 0;
@@ -85,7 +85,7 @@ namespace D3GemCalculator
             Hours = hours.ToString("N0");
 
             return ("Total Time: " + Hours.PadLeft(2, '0') + ":" + Minutes.PadLeft(2, '0') + ":" + Seconds.PadLeft(2, '0')); //padded output
-        }
+        }*/
 
         public string[] SanityCheck(int typeused, int typewanted, string amountwanted, object gemtypeused, object gemtypewanted)
         { // new and improved sanity check code. replaces the old error checking in buttonclick event method thing.
@@ -130,13 +130,13 @@ namespace D3GemCalculator
             }
             else
                 quantity = int.Parse(amountwanted);
-                output = new string[6];
+                output = new string[5];
             output[0] = CalculateGemsNeeded(typeused, typewanted, quantity, gemtypeused.ToString());
             output[1] = CalculateGold(typeused, typewanted, quantity);
             output[2] = CalculateDeathsBreath(typeused, typewanted, quantity);
-            output[3] = CalculateTime(typeused, typewanted, quantity);
-            output[4] = "To make " + quantity + " " + gemtypewanted.ToString() + ".";
-            output[5] = "Using " + gemtypeused.ToString() + ".";
+            //output[3] = CalculateTime(typeused, typewanted, quantity);
+            output[3] = "To make " + quantity + " " + gemtypewanted.ToString() + ".";
+            output[4] = "Using " + gemtypeused.ToString() + ".";
             return output;
         }
 

@@ -46,20 +46,11 @@
             this.comboBox1.DropDownWidth = 107;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Chipped",
-            "Flawed",
             "Normal",
             "Flawless",
-            "Perfect",
-            "Radiant",
             "Square",
             "Flawless Square",
-            "Perfect Square",
-            "Radiant Square",
             "Star",
-            "Flawless Star",
-            "Perfect Star",
-            "Radiant Star",
             "Marquise",
             "Imperial",
             "Flawless Imperial",
@@ -76,20 +67,11 @@
             this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "Chipped",
-            "Flawed",
             "Normal",
             "Flawless",
-            "Perfect",
-            "Radiant",
             "Square",
             "Flawless Square",
-            "Perfect Square",
-            "Radiant Square",
             "Star",
-            "Flawless Star",
-            "Perfect Star",
-            "Radiant Star",
             "Marquise",
             "Imperial",
             "Flawless Imperial",
