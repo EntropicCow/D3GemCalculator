@@ -128,9 +128,15 @@ namespace D3GemCalculator
                 output[0] = "Whole numbers only.";
                 return output;
             }
+            else if (amountwanted == "" || amountwanted == "0")
+            {
+                output = new string[1];
+                output[0] = "Please enter an amount.";
+                return output;
+            }
             else
                 quantity = int.Parse(amountwanted);
-                output = new string[5];
+            output = new string[5];
             output[0] = CalculateGemsNeeded(typeused, typewanted, quantity, gemtypeused.ToString());
             output[1] = CalculateGold(typeused, typewanted, quantity);
             output[2] = CalculateDeathsBreath(typeused, typewanted, quantity);

@@ -23,21 +23,25 @@ namespace D3GemCalculator
 
 
         private void button1_Click(object sender, EventArgs e)
-        { 
+        {
             listBox1.Items.Clear(); // clear the listbox everytime the calculate button is pressed
 
             string[] output;
+
+
             output = GemCalculator.SanityCheck(comboBox1.SelectedIndex, comboBox2.SelectedIndex, textBox1.Text, comboBox1.SelectedItem, comboBox2.SelectedItem);
 
             foreach (string message in output)
             {
-                if(message == "")
+                if (message == "")
                 {
                     ; //no deathsbreath text, so do nothing.
                 }
                 else
-                listBox1.Items.Add(message);
+                    listBox1.Items.Add(message);
             }
+
+
         }
 
         private void Aboutbutton_Click(object sender, EventArgs e)
@@ -47,7 +51,7 @@ namespace D3GemCalculator
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true;
                 button1_Click(sender, e);
