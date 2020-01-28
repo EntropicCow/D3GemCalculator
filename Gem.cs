@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Numerics;
+using System.Globalization;
 
 namespace D3GemCalculator
 {
@@ -151,9 +152,9 @@ namespace D3GemCalculator
         {
             string output = "";
             string temp;
+            string temp2 = CultureInfo.CurrentCulture.NumberFormat.NumberGroupSeparator;
             char[] tempArray;
             char[] tempArrayTwo;
-
             temp = input.ToString(); // take big int and turn it into string
             tempArray = temp.ToCharArray(); // to char array
             Array.Reverse(tempArray); // reverse  it
@@ -165,7 +166,7 @@ namespace D3GemCalculator
                 }
                 if (i != 0 && i % 3 == 0 && i != tempArray.Length)
                 {
-                    output = output + "," + tempArray[i];
+                    output = output + temp2 + tempArray[i];
                 }
             }
             tempArrayTwo = output.ToCharArray();
